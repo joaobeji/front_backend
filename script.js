@@ -1,4 +1,5 @@
-const urlApi = "http://localhost:3001";
+// const urlApi = "http://localhost:3001";
+const urlApi = "https://servico-backend-5g76.onrender.com";
 
 // Função para carregar produtos
 async function carregarProdutos() {
