@@ -13,17 +13,46 @@
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" href="../../css/estilo.css" />
   </head>
   <body>
-    <!-- Menu Lateral & Barra Superior -->
-    <script src="../../menu.js"></script>
-    <div class="container" id="menu"></div>
+    <!-- Barra Superior -->
+    <div class="top-bar">
+      <div class="hamburger text-white">
+        <!-- <i class="bi bi-list" onclick="toggleSidebar()"></i> -->
+      </div>
+      <div class="user-info">
+        <i class="bi bi-person-circle user-icon"></i>
+        <span>Usuário Logado</span>
+      </div>
+    </div>
+    <br /><br />
+
+    <!-- Menu Lateral -->
+    <div class="sidebar" id="sidebar">
+      <br />
+      <a href="../../" onclick="toggleSidebar()"
+        ><i class="bi bi-house-door"></i
+        ><span class="text">Página Inicial</span></a
+      >
+      <a href="./" onclick="toggleSidebar()"
+        ><i class="bi bi-person-plus"></i><span class="text">Cadastro</span></a
+      >
+      <a href="./lista.html" onclick="toggleSidebar()"
+        ><i class="bi bi-list"></i
+        ><span class="text">Lista de Usuários</span></a
+      >
+    </div>
 
     <div class="main-content" id="main-content">
       <div class="container mt-5">
         <div class="row justify-content-md-center">
-          <div class="col-md-10">
-            <h2 class="text-center">Cadastro de Produto</h2>
+          <div class="col-md-8">
+            <h4 class="">
+              <a href="../../" class="btn btn-danger">Voltar</a>
+              | Cadastro de Produto
+            </h4>
+            <br />
 
             <form id="cadastroForm">
               <div class="mb-3">

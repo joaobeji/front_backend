@@ -1,8 +1,8 @@
-// const urlApi = "http://localhost:3001";
-const urlApi = "https://servico-backend-5g76.onrender.com";
-
 // Função para abrir o modal de edição
 function abrirModalEdicao(id, nome, preco, descricao) {
+  // const API_LOCAL = "http://localhost:3001";
+  const API_NUVEM = "https://servico-backend-5g76.onrender.com";
+
   document.getElementById("produtoId").value = id;
   document.getElementById("produtoNome").value = nome;
   document.getElementById("produtoPreco").value = preco;
@@ -18,7 +18,7 @@ async function salvarEdicao() {
   const preco = document.getElementById("produtoPreco").value;
   const descricao = document.getElementById("produtoDescricao").value;
 
-  const response = await fetch(`${urlApi}/produtos/${id}`, {
+  const response = await fetch(`${API_NUVEM}/produtos/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

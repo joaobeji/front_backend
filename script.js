@@ -1,14 +1,15 @@
-// const urlApi = "http://localhost:3001";
-const urlApi = "https://servico-backend-5g76.onrender.com";
+// const API_LOCAL = "http://localhost:3001";
+const API_NUVEM = "https://servico-backend-5g76.onrender.com";
+
 
 // Função para carregar produtos
 async function carregarProdutos() {
-  const response = await fetch(urlApi + "/produtos");
+  const response = await fetch(API_NUVEM + "/produtos");
   const produtos = await response.json();
-  const lista = document.getElementById("produto-lista");
-  lista.innerHTML = "";
-  produtos.forEach((produto) => {
-    const row = document.createElement("tr");
+  const lista = document.getElementById('produto-lista');
+  lista.innerHTML = '';
+  produtos.forEach(produto => {
+    const row = document.createElement('tr');
     row.innerHTML = `
       <td>${produto.id}</td>
       <td>${produto.nome}</td>

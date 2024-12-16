@@ -1,10 +1,10 @@
-// const urlApi = "http://localhost:3001";
-const urlApi = "https://servico-backend-5g76.onrender.com";
-
 document
   .getElementById("cadastroForm")
   .addEventListener("submit", async function (event) {
     event.preventDefault(); // Impede o envio padrão do formulário
+
+    // const API_LOCAL = "http://localhost:3001";
+    const API_NUVEM = "https://servico-backend-5g76.onrender.com";
 
     const formData = new FormData(this);
     const data = {
@@ -14,7 +14,7 @@ document
     };
 
     try {
-      const response = await fetch(urlApi + "/produtos", {
+      const response = await fetch(API_NUVEM + "/produtos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
