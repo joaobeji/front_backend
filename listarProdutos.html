@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Produtos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  </head>
+  <body>
+    <!-- Menu Lateral & Barra Superior -->
+    <script src="../../menu.js"></script>
+    <div id="menu"></div>
+
+    <div class="main-content" id="main-content">
+      <div class="container mt-5">
+        <div class="row justify-content-md-center">
+          <div class="col-md-12">
+            <h2 class="text-center">Lista de Produtos</h2>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Preço</th>
+                  <th>Descrição</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="produto-lista">
+                <!-- Os produtos serão carregados aqui -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal de Edição -->
+    <div
+      class="modal fade"
+      id="editarModal"
+      tabindex="-1"
+      aria-labelledby="editarModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editarModalLabel">Editar Produto</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="editarForm">
+              <input type="hidden" id="produtoId" />
+              <div class="mb-3">
+                <label for="produtoNome" class="form-label">Nome</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="produtoNome"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="produtoPreco" class="form-label">Preço</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="produtoPreco"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="produtoDescricao" class="form-label"
+                  >Descrição</label
+                >
+                <textarea
+                  class="form-control"
+                  id="produtoDescricao"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="salvarEdicao()"
+              >
+                Salvar Alterações
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div
+      class="modal fade"
+      id="confirmarDelecaoModal"
+      tabindex="-1"
+      aria-labelledby="confirmarDelecaoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmarDelecaoModalLabel">
+              Confirmar Exclusão
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Tem certeza que deseja deletar este produto?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-danger" id="confirmarDeletar">
+              Deletar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../src/produto/editarProduto.js"></script>
+    <script src="../../src/produto/deletarProduto.js"></script>
+  </body>
+</html>

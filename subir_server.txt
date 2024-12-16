@@ -1,0 +1,8 @@
+npm install -g serve
+
+se der erro: não pode ser carregado porque a execução de scripts foi desabilitada neste sistema.
+
+1. abre vscode como adm
+2. Get-ExecutionPolicy
+3. Set-ExecutionPolicy RemoteSigned
+4. serve -s frontend
